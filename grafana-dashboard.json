@@ -1,0 +1,35 @@
+{
+  "title": "NebulaOps Monitoring Dashboard",
+  "panels": [
+    {
+      "title": "Total Deployments",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "http_server_requests_seconds_count{uri=\"/api/deployments\"}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "title": "JVM Memory Used",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "jvm_memory_used_bytes",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "title": "CPU Usage",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "system_cpu_usage",
+          "refId": "A"
+        }
+      ]
+    }
+  ]
+}
